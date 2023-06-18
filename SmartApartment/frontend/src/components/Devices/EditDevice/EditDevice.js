@@ -40,39 +40,38 @@ function EditDevice(props) {
 
     return (
         <div className="device">
-            <label>Nazwa:</label>
+            <label>Name:</label>
             <input type="text"
                 value={deviceName}
                 onChange={changeDeviceNameHandler} />
-            <label>Pokój: </label>
+            <br />
+            <label>Room: </label>
             <select value={room} onChange={changeRoomHandler}>
-                <option value="">Wybierz pomieszczenie</option>
-                <option value="Kitchen">Kuchnia</option>
-                <option value="Bedroom">Sypialnia</option>
-                <option value="GuestRoom">Gościny</option>
-                <option value="Bathroom">Łazienka</option>
+                <option value="">Choose a room</option>
+                <option value="Kitchen">Kitchen</option>
+                <option value="Bedroom">Bedroom</option>
+                <option value="GuestRoom">GuestRoom</option>
+                <option value="Bathroom">Bathroom</option>
             </select>
-            <br />
-            <label>Rodzaj urządzenia: </label>
+            <label> Select a device: </label>
             <select value={type} onChange={changeTypeHandler}>
-                <option value="">Wybierz urządzenie</option>
-                <option value="Refrigerator">Lodówka</option>
-                <option value="Light">Światło</option>
-                <option value="WashingMachine">Pralka</option>
-                <option value="Dishwasher">Zmywarka</option>
-                <option value="TV">Telewizor</option>
-                <option value="Shower">Prysznic</option>
-                <option value="Bed">Łóżka</option>
+                <option value="">Select a device</option>
+                <option value="Refrigerator">Refrigerator</option>
+                <option value="Light">Light</option>
+                <option value="WashingMachine">WashingMachine</option>
+                <option value="Dishwasher">Dishwasher</option>
+                <option value="TV">TV</option>
+                <option value="Shower">Shower</option>
+                <option value="Bed">Bed</option>
             </select>
-            <br />
-            <label>On/OFF: </label>
+            <label> On/OFF: </label>
             <select value={isActive} onChange={changeIsActiveHandler}>
-                <option value="">Wybierz urządzenie</option>
-                <option value="True">Włącz</option>
-                <option value="False">Wyłącz</option>
+                <option value="">ON/OFF</option>
+                <option value="True">On</option>
+                <option value="False">OFF</option>
             </select>
             <br />
-            <button onClick={() => editDevice()}>Zapisz</button>
+            <button className="editPanel" onClick={() => editDevice()}> Save</button>
         </div>
 
     );

@@ -5,7 +5,7 @@ const deviceAction = require('../actions/api/devicesActions');
 const userAction = require('../actions/api/usersActions');
 const adminAction = require('../actions/api/adminActions')
 
-router.post('/register', userAction.registerUser)
+router.post('/registration', userAction.registrationUser)
 router.post('/login', userAction.loginUser)
 router.get('/devices', deviceAction.getAllDevices)
 router.get('/devices/:id', deviceAction.getDevice)

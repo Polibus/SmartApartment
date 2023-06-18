@@ -1,0 +1,47 @@
+.content {
+    justify-content: center;
+    background-color: #444444;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    border: 1px solid #000000;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+input {
+    width: 60%;
+    text-align: center;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 10px;
+    background-color: #EDEDED;
+    background-clip: padding-box;
+    border: 1px solid #000000;
+    border-radius: .25rem;
+}
+
+.link {
+    text-decoration: none;
+    color: #EDEDED;
+}
+
+.link:hover {
+    font-size: 18px;
+    color: #DA0037;
+}
+
+.button {
+    background-color: #444444;
+    text-decoration: none;
+    width: 15%;
+    font-size: 15px;
+    color: #EDEDED;
+    border: 1px solid #EDEDED;
+    border-radius: 30px;
+}
+
+.button:hover {
+    font-size: 18px;
+}

@@ -49,43 +49,43 @@ function NewDevice(props) {
     return (
         showForm ? (
             <div className="device">
-                <label>Nazwa: </label>
+                <label>Name: </label>
                 <input type="text"
                     value={deviceName}
                     onChange={changeDeviceNameHandler} />
-                <label>Pokój: </label>
+                <br />
+                <label>Room: </label>
                 <select value={room} onChange={changeRoomHandler}>
-                    <option value="">Wybierz pomieszczenie</option>
-                    <option value="Kuchnia">Kuchnia</option>
-                    <option value="Sypialnia">Sypialnia</option>
-                    <option value="Gościny">Gościny</option>
-                    <option value="Łazienka">Łazienka</option>
+                    <option value="">Choose a room</option>
+                    <option value="Kitchen">Kitchen</option>
+                    <option value="Bedroom">Bedroom</option>
+                    <option value="GuestRoom">GuestRoom</option>
+                    <option value="Bathroom">Bathroom</option>
                 </select>
-
-                <label> Rodzaj urządzenia: </label>
+                <label> Device: </label>
                 <select value={type} onChange={changeTypeHandler}>
-                    <option value="">Wybierz urządzenie</option>
-                    <option value="Lodówka">Lodówka</option>
-                    <option value="Swiatło">Światło</option>
-                    <option value="Pralka">Pralka</option>
-                    <option value="Zmywarka">Zmywarka</option>
-                    <option value="Telewizor">Telewizor</option>
-                    <option value="Prysznic">Prysznic</option>
-                    <option value="lozko">Łóżka</option>
+                    <option value=""> Select a device</option>
+                    <option value="Refrigerator">Refrigerator</option>
+                    <option value="Light">Light</option>
+                    <option value="WashingMachine">WashingMachine</option>
+                    <option value="Dishwasher">Dishwasher</option>
+                    <option value="TV">TV</option>
+                    <option value="Shower">Shower</option>
+                    <option value="Bed">Bed</option>
                 </select>
 
                 <label> On/OFF: </label>
                 <select value={isActive} onChange={changeIsActiveHandler}>
-                    <option value="">Włącz/Wyłącz</option>
-                    <option value="True">Włącz</option>
-                    <option value="False">Wyłącz</option>
+                    <option value="">On/OFF</option>
+                    <option value="True">On</option>
+                    <option value="False">OFF</option>
                 </select>
+                <br />
 
-
-                <button onClick={() => addDevice()}>Dodaj urządzenie</button>
+                <button onClick={() => addDevice()}>New device</button>
             </div>
         ) : (
-            <button onClick={() => { setShowForm(true) }}>Nowe urządzenie</button>
+            <button className="panelNew" onClick={() => { setShowForm(true) }}>New device</button>
         )
     );
 }

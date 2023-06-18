@@ -47,7 +47,6 @@ class Devices extends React.Component {
 
     async addDevice(device) {
         const devices = [...this.state.devices];
-        console.log(device)
         try {
             if (device.room !== "" && device.name !== "" && device.type !== "" && device.isActive !== "") {
                 const res = await axios.post('http://localhost:3001/api/devices', device)
@@ -55,7 +54,7 @@ class Devices extends React.Component {
                 devices.push(newDevice);
                 this.setState({ devices });
             } else {
-                alert('Puste pola')
+                alert('Empty fields')
             }
         } catch (err) {
             console.log(err.response.data)
@@ -75,7 +74,7 @@ class Devices extends React.Component {
             }
             this.toggleModal();
         } else {
-            alert('Puste pola')
+            alert('Empty fields')
         }
     }
 
@@ -90,10 +89,10 @@ class Devices extends React.Component {
 
     render() {
         return (
-            <div>
-                <p> Urządzenia: </p>
-                {User.isAdmin && <button onClick={() => AdminPanel()}>Panel Admina</button>}
-                <button onClick={() => logout()}>Wyloguj</button><br />
+            <div className="content">
+                <h1> Devices </h1>
+                {User.isAdmin && <button className="panel" onClick={() => AdminPanel()}>Admin</button>}
+                <button className="panel" onClick={() => logout()}>Logout</button><br />
 
                 <NewDevice
                     onAdd={(device) => this.addDevice(device)} />
@@ -101,7 +100,7 @@ class Devices extends React.Component {
 
                 <Modal
                     isOpen={this.state.showEditModal}
-                    contentLabel="Edytuj urządzenie"
+                    contentLabel="Edit Device"
                     ariaHideApp={false}>
                     <EditDevice
                         _id={this.state.editDevice._id}
@@ -112,7 +111,7 @@ class Devices extends React.Component {
                         isActive={this.state.editDevice.isActive}
                         onEdit={device => this.editDevice(device)}
                     />
-                    <button onClick={() => this.toggleModal()}>Anuluj</button>
+                    <button className="editPanel" onClick={() => this.toggleModal()}>Anuluj</button>
                 </Modal>
 
                 {this.state.devices.map(device => (

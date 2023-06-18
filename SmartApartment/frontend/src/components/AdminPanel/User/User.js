@@ -19,12 +19,13 @@ function User(props) {
     }
     return (
         <div className="device">
-            <p onClick={toggleDescription}>{props.email}</p>
+
+            {props.isActive ? <p style={{ color: "#39A845", fontWeight: "bold", fontSize: "25px" }} onClick={toggleDescription}>{props.email}</p> : <p style={{ color: "#DA0037", fontWeight: "bold", fontSize: "25px" }} onClick={toggleDescription}>{props.email} </p>}
             {showDescription ? (
-                <div className="description"> Czy jest Adminem: {props.isAdmin.toString()} <br /> Czy jest Aktywny: {props.isActive.toString()} </div>
+                <div className="description"> Admin: {props.isAdmin.toString()} <br /> Banned: {props.isActive.toString()} </div>
             ) : null}
-            <button onClick={editHandler}>edytuj</button>
-            <button className="delete" onClick={() => { props.onDelete(props._id); }}>usuń</button>
+            <button onClick={editHandler}> edit user</button>
+            <button className="delete" onClick={() => { props.onDelete(props._id); }}>delete</button>
         </div>
 
     );

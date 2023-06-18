@@ -1,42 +1,72 @@
 .device {
-    background-color: #fff;
+    justify-content: center;
+    background-color: #EDEDED;
     border-radius: 6px;
     padding: 12px 20px;
-    text-align: left;
+    text-align: center;
     margin: 10px;
+}
+
+.content {
+    background-color: #444444;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    border: 1px solid #000000;
+    padding: 10px;
+    border-radius: 30px;
 }
 
 .description {
     display: block;
-    color: #282c34;
-    font-style: italic;
+    color: #000000;
     margin-bottom: 20px;
 }
 
-.device p {
-    color: #000;
+.panel {
+    background-color: #444444;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.panelNew {
+    background-color: #444444;
+    border: none;
+    color: #39A845;
     font-weight: bold;
-    cursor: pointer;
+    display: inline-block;
+    font-size: 30px;
 }
 
-.device button {
-    margin: 2px;
-    background-color: rgb(129, 70, 240);
-    color: #fff;
-    border: 0;
-    border-radius: 4px;
-    padding: 4px 8px;
-    cursor: pointer;
+.panel:hover {
+    background-color: #444444;
+    border: none;
+    color: #171717;
+    display: inline-block;
+    font-size: 16px;
 }
 
-.device button:hover {
-    background-color: rgb(129, 70, 200);
+.panelNew:hover {
+    background-color: #444444;
+    border: none;
+    color: #DA0037;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 30px;
 }
 
-.device button.delete {
-    background-color: rgb(238, 67, 55);
+.editPanel {
+    background-color: #444444;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-size: 16px;
 }
 
-.device button.delete:hover {
-    background-color: rgb(223, 57, 45);
+.editPanel:hover {
+    border: none;
+    font-weight: bold;
 }

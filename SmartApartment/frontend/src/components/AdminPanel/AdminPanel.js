@@ -73,7 +73,7 @@ class AdminPanel extends React.Component {
             this.toggleModal();
 
         } else {
-            alert('Puste pola')
+            alert('Empty fields')
         }
     }
     toggleModal() {
@@ -88,14 +88,14 @@ class AdminPanel extends React.Component {
     render() {
 
         return (
-            <div>
-                <p> Użytkownicy: </p>
-                <button onClick={() => device()}>Urządzenia</button>
-                <button onClick={() => logout()}>Wyloguj</button>
+            <div className="content">
+                <h1> Administration </h1>
+                <button className="panel" onClick={() => device()}>Devices</button>
+                <button className="panel" onClick={() => logout()}>Logout</button>
 
                 <Modal
                     isOpen={this.state.showEditModal}
-                    contentLabel="Edytuj urządzenie"
+                    contentLabel="Edit user"
                     ariaHideApp={false}>
                     <EditUser
                         _id={this.state.editUser._id}
@@ -105,7 +105,7 @@ class AdminPanel extends React.Component {
                         isActive={this.state.editUser.isActive}
                         onEdit={user => this.editUser(user)}
                     />
-                    <button onClick={() => this.toggleModal()}>Anuluj</button>
+                    <button className="editPanel" onClick={() => this.toggleModal()}>Anuluj</button>
                 </Modal>
 
 

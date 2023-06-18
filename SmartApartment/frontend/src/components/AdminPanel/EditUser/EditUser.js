@@ -27,22 +27,23 @@ function EditUser(props) {
 
     return (
         <div className="device">
-            <label>Użytkownik jest adminem: </label>
+            <label>Admin: </label>
             <select value={isAdmin} onChange={changeIsAdminHandler}>
                 <option value="">Admin</option>
                 <option value="true">true</option>
                 <option value="false">false</option>
             </select>
 
-            <br />
-            <label>Użytkownik jest aktywny: </label>
+            <label> Banned: </label>
             <select value={isActive} onChange={changeIsActiveHandler}>
-                <option value="">Aktywność</option>
+                <option value="">Banned</option>
                 <option value="true">true</option>
                 <option value="false">false</option>
             </select>
             <br />
-            <button onClick={() => editUser()}>Zapisz</button>
+            <br />
+            <button onClick={() => editUser()}>Save</button>
+
         </div>
 
     );

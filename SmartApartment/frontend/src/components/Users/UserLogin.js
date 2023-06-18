@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import axios from "axios"
+import './Users.css'
 import { Link } from 'react-router-dom';
 function UserLogin() {
 
@@ -14,11 +15,10 @@ function UserLogin() {
             window.location.href = '/api/devices'
         }
         catch (err) {
-            console.log(err.response.data)
             if (err.response.data.user === true) {
                 alert('You are Banned')
             } else {
-                alert('Please check your username and password')
+                alert('Please check your email and password')
             }
         }
     }
@@ -26,7 +26,7 @@ function UserLogin() {
 
 
     return (
-        <div>
+        <div className="content">
             <h1>Login</h1>
             <form onSubmit={loginUser}>
 
@@ -39,10 +39,10 @@ function UserLogin() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     type="password"
-                    placeholder="Hasło" /><br />
-                <input type='submit' value="Login" />
+                    placeholder="Password" /><br />
+                <input type='submit' value="Login" className="button" />
             </form>
-            <Link to="/api/register">Rejestracaja</Link>
+            <Link to="/api/registration" className="link">Create account</Link>
         </div>
     )
 }
